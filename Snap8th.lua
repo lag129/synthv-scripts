@@ -1,4 +1,4 @@
-SCRIPT_TITLE = "Move selected note 8th note earlier"
+SCRIPT_TITLE = "Move selected note 8th quontaize"
 
 function getClientInfo()
   return {
@@ -12,7 +12,7 @@ end
 function getTranslations(langCode)
   if langCode == "ja-jp" then
     return {
-      { SCRIPT_TITLE, "8分音符前に選択ノートを移動" }
+      { SCRIPT_TITLE, "選択したノートを8分音符にクオンタイズ" }
     }
   end
   return {}
@@ -36,9 +36,8 @@ function main()
     local bpm = tonumber(tempoMark.bpm)
     local currentBar = ((60 / bpm) * 4) / 8
     local currentBarBlick = timeAxis:getBlickFromSeconds(currentBar)
-    local diffBlick = currentOnset - currentBarBlick
 
-    selectedNotes[i]:setOnset(diffBlick)
+    selectedNotes[i]:setDuration(currentBarBlick)
   end
 
   SV:finish()

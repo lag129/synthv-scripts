@@ -12,7 +12,7 @@ end
 function getTranslations(langCode)
   if langCode == "ja-jp" then
     return {
-      { SCRIPT_TITLE, "8分音符後に選択ノートを移動する" }
+      { SCRIPT_TITLE, "8分音符後に選択ノートを移動" }
     }
   end
   return {}
