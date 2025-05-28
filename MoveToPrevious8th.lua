@@ -1,4 +1,4 @@
-SCRIPT_TITLE = "Move selected note 8th note later"
+SCRIPT_TITLE = "Move selected note 8th note earlier"
 
 function getClientInfo()
   return {
@@ -12,7 +12,7 @@ end
 function getTranslations(langCode)
   if langCode == "ja-jp" then
     return {
-      { SCRIPT_TITLE, "8分音符後に選択ノートを移動する" }
+      { SCRIPT_TITLE, "8分音符前に選択ノートを移動する" }
     }
   end
   return {}
@@ -36,7 +36,7 @@ function main()
     local bpm = tonumber(tempoMark.bpm)
     local currentBar = ((60 / bpm) * 4) / 8
     local currentBarBlick = timeAxis:getBlickFromSeconds(currentBar)
-    local diffBlick = currentOnset + currentBarBlick
+    local diffBlick = currentOnset - currentBarBlick
 
     selectedNotes[i]:setOnset(diffBlick)
   end
