@@ -1,4 +1,4 @@
-SCRIPT_TITLE = "Move selected note 8th quontaize"
+SCRIPT_TITLE = "Set selected notes to 8th note length"
 
 function getClientInfo()
   return {
